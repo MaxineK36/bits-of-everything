@@ -6,3 +6,9 @@
     float: left;
     height: 100%;
 }
+
+.textDiv{
+    width: 33%;
+    height:20%;
+    float: left;
+}

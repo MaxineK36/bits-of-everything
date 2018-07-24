@@ -1,5 +1,6 @@
 var numchar = 0;
 var main = document.getElementById("colors");
+var width = window.innerWidth;
 
 var text = prompt("input some text!");
 //text = "wehgioewhvkzxnvois"
@@ -13,8 +14,27 @@ function opposite(r, g, b){
     return "rgb(" + or + "," + og + "," + ob + ")";
 }
 
+function makeTextDivs(text, stripe){
+    console.log("making text divs");
+    console.log("length is " + text.length);
+    var textSize = (innerWidth / numStripes)/3 ;
+    for (var i = 0; i<text.length; i++){
+        console.log(i);
+        var tdiv = document.createElement("div");
+        tdiv.className = "textDiv";
+        tdiv.innerHTML = text[i];
+//        tdiv.style.height = (height*0.2) + "px";
+//        tdiv.style.fontSize = (height*0.2) + "px";
+        tdiv.style.height = textSize;
+        tdiv.style.fontSize = textSize;
+        var theight = tdiv.style.height;
+        console.log("height is "+theight);
+        stripe.appendChild(tdiv);
+    } 
+}
 
-for (var i = 0; i < numStripes; i++){
+
+function makeStripe(stripeText){
     console.log("i is: " + i);
 
     var stripe = document.createElement("div");
@@ -22,8 +42,6 @@ for (var i = 0; i < numStripes; i++){
 //    stripe.style.width = (100/numStripes) + "%"
 //    var id = "stripe" + i
 
-    var stripeText = text.slice(0,3); 
-    text = text.slice(3);
 
     var r = stripeText.charCodeAt(0);
     var g = stripeText.charCodeAt(1);
@@ -33,14 +51,19 @@ for (var i = 0; i < numStripes; i++){
 
     stripe.style.width = (100/numStripes) + "%";
     stripe.style.backgroundColor = rgb;
-    stripe.innerHTML = stripeText;
 //    stripe.style.color = opposite(r,g,b);
     stripe.style.color = ((r+g+b) < 200) ? "white" : "black";
     stripe.style.textAlign = "center";
         
     main.appendChild(stripe);
+    makeTextDivs(stripeText, stripe);
 }
 
+for (var i = 0; i < numStripes; i++){
+    var stripeText = text.slice(0,3); 
+    text = text.slice(3);
+    makeStripe(stripeText);
+}
 /*
 while (numchar != 3){
     word = prompt("type a three-letter word")
