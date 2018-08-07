@@ -1,5 +1,6 @@
 body{
     font-family: courier;
+    overflow: hidden;
 }
 
 #main{
