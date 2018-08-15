@@ -105,7 +105,6 @@ function addColors(colorByRow){
 
 function buildDivs(contents){
     console.log("building divs\n");
-<<<<<<< HEAD
     for (var i = 0; i < down; i++){
         var row = document.createElement("div");
 	row.id= "r"+i;
@@ -130,26 +129,8 @@ function buildDivs(contents){
 	    row.appendChild(div);
         }
 	document.getElementById("main").appendChild(row);
-=======
-    for (var i = 0; i < across*down; i++){
-        div = document.createElement("div");
-	div.className = "block";
-	div.id = "b"+(i);
-	console.log(div.id);
-	div.style.backgroundColor = (i % 2 ? "darkBlue" : "blue");
-	div.style.float = "left";
-  	div.onclick = function(){showItemBinary(this.id)};
-	div.onmouseover = function(){
-            this.style.backgroundColor = "grey";
-	}
-	div.onmouseout = function(){
-            this.style.backgroundColor = this.value;
-	}
-	div.innerHTML = i;
-	document.getElementById("main").appendChild(div);
->>>>>>> b61bad86328a169bc6f3372eba8f97d234e83be8
     }
-}
+  }
 
 function onResize(){
     var w = main.offsetWidth;
@@ -175,25 +156,19 @@ function resize(){
         rowList[i].style.marginLeft = rowMargin+"px";
     }
     divList = document.getElementsByClassName("block");
-<<<<<<< HEAD
-=======
     cover = document.getElementById("cover");
     cover.style.paddingLeft = w / 4;
     cover.style.paddingRight = w / 4;
     cover.style.paddingTop = h / 4;
     cover.style.paddingBottom = h / 4;
     var span = document.querySelector("span");
->>>>>>> b61bad86328a169bc6f3372eba8f97d234e83be8
     for (var i = 0; i < divList.length; i++){
         divList[i].style.width = divWidth;
         divList[i].style.height = divHeight;
 	var fsize = Math.min(divWidth*1.4, 0.7*divHeight);
-<<<<<<< HEAD
         divList[i].style.fontSize = "12px";//fsize;
-=======
         divList[i].style.fontSize = fsize;
 //        divList[i].style.paddingTop = (divHeight - fsize)/2
->>>>>>> b61bad86328a169bc6f3372eba8f97d234e83be8
     }
     cover = document.getElementById("cover");
     cover.style.paddingLeft = w / 4;
@@ -206,15 +181,12 @@ function setDivContents(contentArray){
     var colors = ["red","orange","yellow","green","blue","purple","pink","grey"]
    divList = document.getElementsByClassName("block");
    for (var i = 0; i < contentArray.length; i++){
-<<<<<<< HEAD
        //divList[i].innerHTML = contentArray[i]["text"];
        divList[i].innerHTML = i;
        divList[i].style.verticalAlign= "center";
        divList[i].style.backgroundColor = colors[Math.floor(i/32)];//contentArray[i]["background"];
-=======
        divList[i].innerHTML = "<span>"+contentArray[i]["text"]+"</span>";
        divList[i].style.backgroundColor = contentArray[i]["background"];
->>>>>>> b61bad86328a169bc6f3372eba8f97d234e83be8
        divList[i].value = contentArray[i]["background"];
    }
 }
