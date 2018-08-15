@@ -77,12 +77,14 @@ function showItemBinary(id){
     innerText += "<br></br><p> <a href='whybinary.html'> Why all the binary?</a></p>"
     document.getElementById("blockText").innerHTML = innerText;
     console.log("shown");
+    resize();
 }
 
 function hideItemBinary(){
     document.getElementById("cover").style.display = "none";
     var binInfo = document.getElementById("info");
     binInfo.style.display = "none";
+    resize();
 }
 
 function addText(contentArray, row, index, str){
@@ -114,7 +116,7 @@ function buildDivs(contents){
         for (var j = 0; j < across; j++){
             div = document.createElement("div");
     	    div.className = "block";
-    	    div.id = "b"+(across*i+j+1);
+    	    div.id = "b"+(across*i+j);
     	    console.log(div.id);
 	    div.style.backgroundColor = (i % 2 ? "darkBlue" : "blue");
 	    div.style.float = "left";
@@ -170,11 +172,6 @@ function resize(){
         divList[i].style.fontSize = fsize;
 //        divList[i].style.paddingTop = (divHeight - fsize)/2
     }
-    cover = document.getElementById("cover");
-    cover.style.paddingLeft = w / 4;
-    cover.style.paddingRight = w / 4;
-    cover.style.paddingTop = h / 4;
-    cover.style.paddingBottom = h / 4;
 }
 
 function setDivContents(contentArray){
