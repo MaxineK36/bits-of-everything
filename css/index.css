@@ -21,6 +21,7 @@ div{
 
 .block{
     text-align: center;
+    padding-top: auto;
 }
 
 #cover{
@@ -37,7 +38,28 @@ div{
 /*    border-radius: 15px; */
     background-color: black;
     color: white;
+    border-radius: 15px;
+    color: black;
     width: 50%;
     height: 50%;
-    box-shadow: 5px 10px;
+/*    box-shadow: 5px 10px; */
+    padding: 20px;
+    text-align: center;
+    vertical-align: center;
+    border: 2px black;
+    overflow: scroll;
+}
+
+
+#x{
+    text-align: left;
+    text-align: right;
+    padding: 2px;
+}
+
+#x:hover{
+    color: white;
+}
+span{
+    line-height: 100px;
 }
