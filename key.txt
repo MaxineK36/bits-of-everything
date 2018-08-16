@@ -1,0 +1,4 @@
+index: homepage, with clickability
+whybinary: page describing that everything is bits
+threenumbers: why there are three numbers in the binary
+
