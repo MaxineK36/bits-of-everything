@@ -8,7 +8,9 @@ function getQueryVariable(variable){
        var query = window.location.search.substring(1);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
+               console.log("in query loop");
                var pair = vars[i].split("=");
+	       console.log(pair);
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
