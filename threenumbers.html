@@ -1,15 +1,16 @@
 <html>
 <head>
+    <link rel="stylesheet" href="css/colorChar.css">
     <link rel="stylesheet" href="css/descriptorPage.css">
 </head>
 <body>
-    <h1> Heading Goes Here </h1>
+    <h1>Why is a color three numbers in binary?</h1>
     <h2> Making Colors on a Screen </h2>
-    <p> Since you're reading this, you passed elementary school, which means you know how to make colors out of paint: simply combine red, blue, and yellow in the right proportions, and you can have any color you want. </p>
-    <p> Unfortunately, this method doesn't work on a computer. Instead, we combine red, green, and blue in various amounts in order to make the thousands of colors we see every day. (<a href="rgb.html">Why use red, green, and blue?</a></p>
+    <p> We combine red, green, and blue in various amounts in order to make the thousands of colors we see every day. (<a href="rgb.html">Why use red, green, and blue?</a>)</p>
+    <p> For example, <span id = "excolor">this color</span> is made like this: <div id = "excolorgraph"></div> </p>
     <h2> Representing Red, Green, and Blue Values </h2>
-    <p> There are two main ways, then, that these values are represented for programming purposes. The first is the simplest: colors appear as rgb(34,0,89), and so on, with the first value representing red, the second green, and the third blue. Each number will be between 0 and 255, allowing for 256*256*256 = 16,777,216 different colors </p>
-    <p> The second way is also pretty common, so you've likely seen it before: as a hex code. So, this could look like #220058. This is called a "hex code" because it's actually just a number, but in hex: base 16. The first two digits represent the red value, the second two represent the green value, and the last two represent the blue value. The # indicates that it's hex. So, the maximum possible value of a color would be #ffffff (<a href="hex.html">Why?</a>), or, in other words, r=255, g=255, b=255 (<a href="hex.html">Why is ff equal to 255?</a>). </p>
+    <p> There are two main ways these values are represented for programming purposes. The first is the simplest: colors appear as rgb(34,0,89), and so on, with the first value representing red, the second green, and the third blue. Each number will be between 0 and 255, allowing for 256*256*256 = 16,777,216 different colors (<span class="popup" onclick="why256cubed()">Why 256^3?</span>
+    <p> The second way is as a hex code. So, this could look like #220058. This is called a "hex code" because it's actually just a number, but in <a href="hex.html">hex: base 16</a>. The first two digits represent the red value, the second two represent the green value, and the last two represent the blue value. The # indicates that it's hex. So, the maximum possible value of a color would be #ffffff (<a href="hex.html">Why?</a>), or, in other words, r=255, g=255, b=255 (<a href="hex.html">Why is ff equal to 255?</a>). </p>
     <p> However, like with everything, these representations are just for the use of humans: to computers, colors are <a href="whybinary.html">represented in binary</a>. So, you can display it as three different binary numbers, each of which can be as little as 0 (00000000) or as big as 255 (11111111) (<a href="binary.html">Why is 11111111 255?</a>).
     
     <div id = "sources"> 
@@ -18,4 +19,6 @@
         </ol>
     </div>
 </body>
+<script src="js/helpers.js"></script>
+<script src="js/threenumbers.js"></script>
 </html>
